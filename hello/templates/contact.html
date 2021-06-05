@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Us
+{% endblock title %}
+{% block body %}
+<img src="/static/4.jpeg" class="img-fluid" alt="...">
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3 text-center text-success">Contact Us</h4>
+        <form class="needs-validation align-content-center" novalidate="" method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div class="row g-3 px-5 justify-content-center">
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstName" name='firstname' placeholder="" value=""
+                        required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastname" placeholder="" value=""
+                        required="">
+                    <div class="invalid-feedback">
+                        Valid last name is required.
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+
+                <div class="col-8">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="8888-8888">
+                </div>
+                <div class="col-8">
+                    <label for="desc" class="form-label">Tell us what you want to contact for..</label>
+                    <textarea type="text" class="form-control" id="desc" name="desc" rows="3"
+                        placeholder="Description"></textarea>
+                </div>
+
+                <div class="col-8">
+                    <button class="w-100 w-50 px-5 btn btn-success btn-lg" type="submit">Submit</button>
+                </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock body %}
